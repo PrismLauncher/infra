@@ -1,4 +1,4 @@
-{ flake-utils, nixpkgs, ... }:
+{ agenix, flake-utils, nixpkgs, ... }:
 flake-utils.lib.eachDefaultSystem (
   system:
   let
@@ -6,7 +6,7 @@ flake-utils.lib.eachDefaultSystem (
   in
   {
     devShells.default = pkgs.mkShellNoCC {
-      packages = with pkgs; [ just ];
+      packages = [ pkgs.just agenix.packages.${system}.default ];
     };
     formatter = pkgs.nixfmt-rfc-style;
   }

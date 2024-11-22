@@ -6,6 +6,7 @@
     inputs.srvos.nixosModules.hardware-hetzner-cloud-arm
     inputs.srvos.nixosModules.mixins-terminfo
     inputs.nixos-facter-modules.nixosModules.facter
+    inputs.agenix.nixosModules.age
 
     ./disks.nix
   ];
@@ -33,8 +34,8 @@
 
   services.openssh.enable = true;
 
-  users.users.root.openssh.authorizedKeys.keys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJV9lYhi0kcwAAjPTMl6sycwCGkjrI0bvTIwpPuXkW2W scrumplex@andromeda"
+  users.users.root.openssh.authorizedKeys.keyFiles = [
+    ../../keys/users/scrumplex.pub
   ];
 
   system.stateVersion = "24.11";
