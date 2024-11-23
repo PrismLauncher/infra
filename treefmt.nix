@@ -4,6 +4,7 @@
 
   programs.hclfmt.enable = true;
   programs.just.enable = true;
+  programs.mdformat.enable = true;
   programs.nixfmt.enable = true;
   programs.shfmt.enable = true;
   programs.terraform.enable = true;
