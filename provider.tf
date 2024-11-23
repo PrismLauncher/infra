@@ -9,6 +9,15 @@ terraform {
       version = "~> 0.2"
     }
   }
+
+  cloud {
+    hostname = "app.terraform.io"
+    organization = "prismlauncher"
+
+    workspaces {
+      name = "infrastructure"
+    }
+  }
 }
 
 variable "hcloud_token" {
