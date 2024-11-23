@@ -1,6 +1,7 @@
 { inputs, ... }:
 {
   imports = [
+    inputs.self.nixosModules.from-facts
     inputs.self.nixosModules.openssh-pregenerated
     inputs.srvos.nixosModules.server
     inputs.srvos.nixosModules.hardware-hetzner-cloud-arm
@@ -12,25 +13,11 @@
   ];
 
   facter.reportPath = ./facter.json;
+  from-facts.file = ./facts.json;
+  from-facts.interface = "enp1s0";
 
   # this gets enabled by srvos
   services.cloud-init.enable = false;
-
-  networking = {
-    interfaces."enp1s0" = {
-      useDHCP = true;
-      ipv6.addresses = [
-        {
-          address = "2a01:4f8:c013:8496::";
-          prefixLength = 64;
-        }
-      ];
-    };
-    defaultGateway6 = {
-      address = "fe80::1";
-      interface = "enp1s0";
-    };
-  };
 
   services.openssh.enable = true;
 
