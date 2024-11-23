@@ -27,6 +27,7 @@ in
   config = mkIf (cfg.file != null) {
     networking = {
       hostName = cfg.data.hostname;
+      domain = cfg.data.domain;
       interfaces.${cfg.interface} = {
         useDHCP = true;
         ipv6.addresses = [
