@@ -10,7 +10,7 @@ resource "hcloud_server" "andesite" {
 }
 
 resource "netlify_dns_zone" "prismlauncher" {
-  name      = "prismlauncher.org"
+  name = "prismlauncher.org"
   lifecycle {
     prevent_destroy = true
   }

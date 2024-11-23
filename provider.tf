@@ -5,13 +5,13 @@ terraform {
       version = "~> 1.45"
     }
     netlify = {
-      source = "netlify/netlify"
+      source  = "netlify/netlify"
       version = "~> 0.2"
     }
   }
 
   cloud {
-    hostname = "app.terraform.io"
+    hostname     = "app.terraform.io"
     organization = "prismlauncher"
 
     workspaces {
@@ -33,6 +33,6 @@ variable "netlify_token" {
 }
 
 provider "netlify" {
-  token = var.netlify_token
+  token             = var.netlify_token
   default_team_slug = "prismlauncher"
 }
