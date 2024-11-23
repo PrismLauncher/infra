@@ -6,7 +6,7 @@ flake-utils.lib.eachDefaultSystem (
   in
   {
     devShells.default = pkgs.mkShellNoCC {
-      packages = [ pkgs.just agenix.packages.${system}.default ];
+      packages = [ pkgs.just pkgs.opentofu agenix.packages.${system}.default ];
     };
     formatter = pkgs.nixfmt-rfc-style;
   }
