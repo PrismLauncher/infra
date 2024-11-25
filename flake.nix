@@ -23,6 +23,10 @@
     };
     impermanence.url = "github:nix-community/impermanence";
     nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
+    refraction = {
+      url = "github:PrismLauncher/refraction";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

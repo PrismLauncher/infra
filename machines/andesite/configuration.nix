@@ -10,6 +10,7 @@
     inputs.agenix.nixosModules.age
 
     ./disks.nix
+    ./refraction.nix
   ];
 
   facter.reportPath = ./facter.json;
