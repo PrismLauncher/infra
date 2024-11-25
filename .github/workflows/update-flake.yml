@@ -1,0 +1,28 @@
+name: Update flake.lock
+on:
+  schedule:
+    # run every saturday
+    - cron: '0 0 * * 6'
+  workflow_dispatch:
+jobs:
+  update:
+    name: Run update
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v16
+      - name: Update flake.lock
+        id: update
+        uses: DeterminateSystems/update-flake-lock@v24
+        with:
+          pr-title: 'nix: update flake.lock'
+      - name: Enable Pull Request Automerge
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          pull-request-number: ${{ steps.update.outputs.pull-request-number }}
+          merge-method: rebase
