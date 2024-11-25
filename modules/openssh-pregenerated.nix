@@ -1,6 +1,7 @@
 let
   keyFile = "/etc/ssh/ssh_host_ed25519_key";
-in {
+in
+{
   services.openssh = {
     hostKeys = [ ];
     settings.HostKey = keyFile;
