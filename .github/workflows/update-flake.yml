@@ -21,6 +21,7 @@ jobs:
         uses: DeterminateSystems/update-flake-lock@v24
         with:
           pr-title: 'nix: update flake.lock'
+          token: ${{ secrets.AUTOMATA_TOKEN }}
       - name: Enable Pull Request Automerge
         uses: peter-evans/enable-pull-request-automerge@v3
         with:
