@@ -3,9 +3,10 @@
   inputs,
   pkgs,
   ...
-}: {
-  imports = [inputs.refraction.nixosModules.default];
-  nixpkgs.overlays = [inputs.refraction.overlays.default];
+}:
+{
+  imports = [ inputs.refraction.nixosModules.default ];
+  nixpkgs.overlays = [ inputs.refraction.overlays.default ];
 
   age.secrets."prism-refraction.env".file = ./refraction.env.age;
 
@@ -15,4 +16,3 @@
     environmentFile = config.age.secrets."prism-refraction.env".path;
   };
 }
-
