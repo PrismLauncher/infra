@@ -153,6 +153,26 @@
         "type": "github"
       }
     },
+    "refraction": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1732497009,
+        "narHash": "sha256-jyht94CLgCEtexoBh7IjQTz+ZMq4PMDqlVEgUPgjw1g=",
+        "owner": "PrismLauncher",
+        "repo": "refraction",
+        "rev": "d2fb102b0a67179789aa5c6c051cc67ac4a85acc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "PrismLauncher",
+        "repo": "refraction",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "agenix": "agenix",
@@ -161,6 +181,7 @@
         "impermanence": "impermanence",
         "nixos-facter-modules": "nixos-facter-modules",
         "nixpkgs": "nixpkgs",
+        "refraction": "refraction",
         "srvos": "srvos",
         "treefmt-nix": "treefmt-nix"
       }
