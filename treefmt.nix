@@ -12,6 +12,7 @@
   programs.yamlfmt.enable = true;
 
   settings.global.excludes = [
+    "**.age"
     "keys/**.pub"
     "machines/*/facter.json"
     "machines/*/facts.json"
