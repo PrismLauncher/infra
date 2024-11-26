@@ -9,6 +9,7 @@
     inputs.nixos-facter-modules.nixosModules.facter
     inputs.agenix.nixosModules.age
 
+    ./blockgame-meta.nix
     ./comin.nix
     ./disks.nix
     ./refraction.nix

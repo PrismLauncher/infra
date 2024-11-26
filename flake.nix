@@ -27,6 +27,10 @@
       url = "github:nlewo/comin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    blockgame-meta = {
+      url = "github:PrismLauncher/meta";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     refraction = {
       url = "github:PrismLauncher/refraction";
       inputs.nixpkgs.follows = "nixpkgs";
