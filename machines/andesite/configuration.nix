@@ -11,6 +11,8 @@
 
     ./comin.nix
     ./disks.nix
+    ./modmail.nix
+    ./postgresql.nix
     ./refraction.nix
   ];
 
