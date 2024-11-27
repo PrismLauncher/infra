@@ -42,6 +42,7 @@
     flake-utils.lib.meld inputs [
       ./machines/andesite
       ./modules
+      ./ci.nix
       ./development.nix
     ];
 }

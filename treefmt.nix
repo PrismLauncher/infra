@@ -1,15 +1,16 @@
-{ ... }:
 {
   projectRootFile = "flake.nix";
 
-  programs.actionlint.enable = true;
-  programs.hclfmt.enable = true;
-  programs.just.enable = true;
-  programs.mdformat.enable = true;
-  programs.nixfmt.enable = true;
-  programs.shfmt.enable = true;
-  programs.terraform.enable = true;
-  programs.yamlfmt.enable = true;
+  programs = {
+    actionlint.enable = true;
+    hclfmt.enable = true;
+    just.enable = true;
+    mdformat.enable = true;
+    nixfmt.enable = true;
+    shfmt.enable = true;
+    terraform.enable = true;
+    yamlfmt.enable = true;
+  };
 
   settings.global.excludes = [
     "**.age"
