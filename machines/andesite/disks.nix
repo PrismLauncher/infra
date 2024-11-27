@@ -1,6 +1,4 @@
 { inputs, ... }:
-let
-in
 {
   imports = [
     inputs.impermanence.nixosModules.impermanence
