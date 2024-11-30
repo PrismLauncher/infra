@@ -3,6 +3,9 @@
 .envrc.local
 .direnv/
 
+# Terranix symlink
+config.tf.json
+
 # Local .terraform directories
 **/.terraform/*
 

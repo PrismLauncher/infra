@@ -27,6 +27,16 @@
       url = "github:nlewo/comin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    terranix = {
+      url = "github:terranix/terranix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "flake-utils/systems";
+        terranix-examples.follows = "";
+        bats-support.follows = "";
+        bats-assert.follows = "";
+      };
+    };
     blockgame-meta = {
       url = "github:PrismLauncher/meta";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,6 +52,7 @@
     flake-utils.lib.meld inputs [
       ./machines/andesite
       ./modules
+      ./tf
       ./development.nix
     ];
 }
