@@ -1,6 +1,4 @@
 { inputs, ... }:
-let
-in
 {
   imports = [
     inputs.impermanence.nixosModules.impermanence
@@ -8,23 +6,13 @@ in
   ];
 
   disko.devices = {
-    nodev = {
-      "/tmp" = {
-        fsType = "tmpfs";
-        mountOptions = [
-          "size=512M"
-          "mode=755"
-          "noexec"
-        ];
-      };
-      "/" = {
-        fsType = "tmpfs";
-        mountOptions = [
-          "size=128M"
-          "mode=755"
-          "noexec"
-        ];
-      };
+    nodev."/" = {
+      fsType = "tmpfs";
+      mountOptions = [
+        "size=128M"
+        "mode=755"
+        "noexec"
+      ];
     };
 
     disk.andesite = {
@@ -68,6 +56,7 @@ in
 
   environment.persistence."/nix/persistence" = {
     directories = [
+      "/tmp"
       "/var/log"
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
