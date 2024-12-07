@@ -1,4 +1,3 @@
-{ ... }:
 {
   nixosModules = {
     from-facts = ./from-facts.nix;

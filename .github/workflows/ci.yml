@@ -1,20 +1,67 @@
 name: CI
+
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
   workflow_dispatch:
+
 jobs:
-  flake:
-    name: Flake checks
+  eval:
+    name: Evaluate hydraJobs
+
     runs-on: ubuntu-latest
+
+    outputs:
+      matrix: ${{ steps.eval.outputs.matrix }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
       - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v16
-      - name: Setup Nix cache
-        uses: DeterminateSystems/magic-nix-cache-action@v8
-      - name: Run checks
+        uses: cachix/install-nix-action@v27
+
+      - name: Generate matrix
+        id: eval
         run: |
-          nix flake check --print-build-logs --show-trace
+          echo "matrix=$(nix run .#generate-actions-matrix)" >> "$GITHUB_OUTPUT"
+
+  build:
+    name: Build ${{ matrix.attr }}
+    needs: [ eval ]
+
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.eval.outputs.matrix) }}
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v27
+
+      - name: Setup Cachix
+        uses: cachix/cachix-action@v15
+        with:
+          name: prismlauncher
+          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+
+      - name: Build ${{ matrix.attr }}
+        run: |
+          nix build --print-build-logs '${{ matrix.drvPath }}^*'
+
+  # Cumulative job for all of the above
+  release-gate:
+    name: Release Gate
+    needs: [ build ]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Exit with error
+        if: ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}
+        run: exit 1
