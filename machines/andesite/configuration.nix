@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [
     inputs.self.nixosModules.from-facts
@@ -26,6 +26,10 @@
 
   users.users.root.openssh.authorizedKeys.keyFiles = [
     ../../keys/users/scrumplex.pub
+  ];
+
+  environment.systemPackages = [
+    pkgs.kitty.terminfo
   ];
 
   system.stateVersion = "24.11";
