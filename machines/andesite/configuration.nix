@@ -14,6 +14,7 @@
     ./disks.nix
     ./letterbox.nix
     ./postgres.nix
+    ./prometheus
     ./refraction.nix
   ];
 
