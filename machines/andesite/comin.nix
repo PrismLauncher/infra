@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ config, inputs, ... }:
 {
   imports = [ inputs.comin.nixosModules.comin ];
 
@@ -12,4 +12,16 @@
       }
     ];
   };
+
+  services.prometheus.scrapeConfigs = [
+    {
+      job_name = "comin";
+      static_configs = [
+        {
+          labels.role = "andesite";
+          targets = [ "localhost:${toString config.services.comin.exporter.port}" ];
+        }
+      ];
+    }
+  ];
 }
