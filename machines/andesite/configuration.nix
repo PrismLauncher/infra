@@ -12,6 +12,7 @@
     ./blockgame-meta.nix
     ./comin.nix
     ./disks.nix
+    ./prometheus
     ./refraction.nix
   ];
 
