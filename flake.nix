@@ -35,6 +35,10 @@
       url = "github:PrismLauncher/refraction";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    letterbox = {
+      url = "github:TheKodeToad/Letterbox";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

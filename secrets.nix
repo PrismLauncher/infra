@@ -8,6 +8,10 @@ in
     scrumplex
     andesite
   ];
+  "machines/andesite/letterbox.env.age".publicKeys = [
+    scrumplex
+    andesite
+  ];
   "machines/andesite/refraction.env.age".publicKeys = [
     scrumplex
     andesite
