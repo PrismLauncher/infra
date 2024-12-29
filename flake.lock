@@ -236,6 +236,26 @@
         "type": "github"
       }
     },
+    "letterbox": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1735350414,
+        "narHash": "sha256-A5z7VT7k0jNBUu1Mp/8tE12OHJGRmIX+h5eE5G/SInk=",
+        "owner": "TheKodeToad",
+        "repo": "Letterbox",
+        "rev": "dfb8409f53de2e880e06275c34ecc58efb8d1cd0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "TheKodeToad",
+        "repo": "Letterbox",
+        "type": "github"
+      }
+    },
     "nixos-facter-modules": {
       "locked": {
         "lastModified": 1734596637,
@@ -295,6 +315,7 @@
         "disko": "disko",
         "flake-utils": "flake-utils",
         "impermanence": "impermanence",
+        "letterbox": "letterbox",
         "nixos-facter-modules": "nixos-facter-modules",
         "nixpkgs": "nixpkgs",
         "refraction": "refraction",

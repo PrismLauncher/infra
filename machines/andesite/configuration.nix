@@ -12,6 +12,7 @@
     ./blockgame-meta.nix
     ./comin.nix
     ./disks.nix
+    ./letterbox.nix
     ./refraction.nix
   ];
 
@@ -32,5 +33,6 @@
     pkgs.kitty.terminfo
   ];
 
+  services.postgresql.package = pkgs.postgresql_17;
   system.stateVersion = "24.11";
 }
