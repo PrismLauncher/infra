@@ -13,6 +13,7 @@
     ./comin.nix
     ./disks.nix
     ./letterbox.nix
+    ./postgres.nix
     ./refraction.nix
   ];
 
