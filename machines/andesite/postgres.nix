@@ -6,6 +6,6 @@
   };
 
   environment.persistence."/nix/persistence".directories = [
-    "/var/lib/postgres"
+    "/var/lib/postgresql"
   ];
 }
