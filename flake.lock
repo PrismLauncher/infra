@@ -294,11 +294,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1738273328,
-        "narHash": "sha256-Jz9MwkFydZP+Fy9VoX9DVNsH38WdaZM62DLMaAoEoC8=",
+        "lastModified": 1738443380,
+        "narHash": "sha256-3wlZ8IS++Dflyf+U965WZXicZ9gp3hcf4RJ6E0SdCLA=",
         "owner": "PrismLauncher",
         "repo": "refraction",
-        "rev": "501cc32e72fb7f89e78855b2d265a81f70c82018",
+        "rev": "1625a455e0c1618f2a1050a8d65bf29ab5feea3e",
         "type": "github"
       },
       "original": {
