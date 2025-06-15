@@ -15,8 +15,6 @@ jobs:
           persist-credentials: false
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v17
-      - name: Setup Nix cache
-        uses: DeterminateSystems/magic-nix-cache-action@v9
       - name: Run checks
         run: |
           nix flake check --print-build-logs --show-trace
