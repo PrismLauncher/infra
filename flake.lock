@@ -35,11 +35,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1751361561,
-        "narHash": "sha256-zCb2YzCQsj/dtdD9nnFjEfmPYgrzJih180Lem3asNXU=",
+        "lastModified": 1751486852,
+        "narHash": "sha256-XDCzM8ZaTTMDiy4uoZ03jmT0FGoOdbb74eD7HggwkWQ=",
         "owner": "PrismLauncher",
         "repo": "meta",
-        "rev": "927a76db9df1ee0e4e4ffc2726ae4bb40582697c",
+        "rev": "ad92133378082285c0e1390faf64751fd6c99366",
         "type": "github"
       },
       "original": {
@@ -118,11 +118,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1730504689,
-        "narHash": "sha256-hgmguH29K2fvs9szpq2r3pz2/8cJd2LPS+b4tfNFCwE=",
+        "lastModified": 1751413152,
+        "narHash": "sha256-Tyw1RjYEsp5scoigs1384gIg6e0GoBVjms4aXFfRssQ=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "506278e768c2a08bec68eb62932193e341f55c90",
+        "rev": "77826244401ea9de6e3bac47c2db46005e1f30b5",
         "type": "github"
       },
       "original": {
@@ -158,18 +158,14 @@
         "nixpkgs": [
           "blockgame-meta",
           "nixpkgs"
-        ],
-        "nixpkgs-stable": [
-          "blockgame-meta",
-          "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1732021966,
-        "narHash": "sha256-mnTbjpdqF0luOkou8ZFi2asa1N3AA2CchR/RqCNmsGE=",
+        "lastModified": 1750779888,
+        "narHash": "sha256-wibppH3g/E2lxU43ZQHC5yA/7kIKLGxVEnsnVK1BtRg=",
         "owner": "cachix",
         "repo": "git-hooks.nix",
-        "rev": "3308484d1a443fc5bc92012435d79e80458fe43c",
+        "rev": "16ec914f6fb6f599ce988427d9d94efddf25fe6d",
         "type": "github"
       },
       "original": {
@@ -243,11 +239,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1751250394,
-        "narHash": "sha256-yuZ2VGG7SiYa3+iLGF9Di4hu4YlHCLWlQ3XlojgV53w=",
+        "lastModified": 1751463719,
+        "narHash": "sha256-eSOwPMexHIQjrgPPyjjUYZTi0MBCT6tIMk+XDNseTRw=",
         "owner": "TheKodeToad",
         "repo": "Letterbox",
-        "rev": "0049852880f739151b7e4198fd1c5f73228ec040",
+        "rev": "b510d06ebdae9bc3fd36290cac609373a30bb443",
         "type": "github"
       },
       "original": {
@@ -294,11 +290,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1751321683,
-        "narHash": "sha256-soi0y0TG+PNsFS99dZGG+rNCDSIRq5AU9fzuaIWTnAM=",
+        "lastModified": 1751468878,
+        "narHash": "sha256-voqcYHPNzJb4/p1Jefkupb6MnfrY/K+w9tkoQBuwgLc=",
         "owner": "PrismLauncher",
         "repo": "refraction",
-        "rev": "aba40cf20476593d73889cf870f36f58eb1e7191",
+        "rev": "f7185ac6928bd346a7fbcfea40a8015653a2d381",
         "type": "github"
       },
       "original": {
