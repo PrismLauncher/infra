@@ -52,7 +52,7 @@ locals {
 
 # Netlify
 
-resource "cloudflare_record" "netlify_cnames" {
+resource "cloudflare_dns_record" "netlify_cnames" {
   for_each = toset(local.netlify_projects)
   zone_id  = var.zone_id
   name     = each.value
@@ -64,7 +64,7 @@ resource "cloudflare_record" "netlify_cnames" {
 
 # Tuta
 
-resource "cloudflare_record" "tuta_mx" {
+resource "cloudflare_dns_record" "tuta_mx" {
   zone_id  = var.zone_id
   type     = "MX"
   name     = "@"
@@ -73,7 +73,7 @@ resource "cloudflare_record" "tuta_mx" {
   ttl      = 1
 }
 
-resource "cloudflare_record" "tuta_verifications" {
+resource "cloudflare_dns_record" "tuta_verifications" {
   for_each = local.tuta_records
 
   type    = each.value.type
@@ -86,7 +86,7 @@ resource "cloudflare_record" "tuta_verifications" {
 
 # GH Pages
 
-resource "cloudflare_record" "github_pages_verification" {
+resource "cloudflare_dns_record" "github_pages_verification" {
   type    = "TXT"
   zone_id = var.zone_id
   name    = "_github-pages-challenge-PrismLauncher"
@@ -94,7 +94,7 @@ resource "cloudflare_record" "github_pages_verification" {
   ttl     = 1
 }
 
-resource "cloudflare_record" "cnames_github_pages" {
+resource "cloudflare_dns_record" "cnames_github_pages" {
   for_each = toset(local.github_pages)
 
   type    = "CNAME"
@@ -107,7 +107,7 @@ resource "cloudflare_record" "cnames_github_pages" {
 
 # ATProto verification
 
-resource "cloudflare_record" "atproto_verification" {
+resource "cloudflare_dns_record" "atproto_verification" {
   type    = "TXT"
   zone_id = var.zone_id
   name    = "_atproto"
@@ -118,7 +118,7 @@ resource "cloudflare_record" "atproto_verification" {
 # Discord verification
 
 # Attached to scrumplex's Discord account
-resource "cloudflare_record" "discord_verification" {
+resource "cloudflare_dns_record" "discord_verification" {
   type    = "TXT"
   zone_id = var.zone_id
   name    = "_discord"
