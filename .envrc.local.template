@@ -1,5 +1,5 @@
 #!/bin/sh
 
 export TF_VAR_hcloud_token=foo
-export TF_VAR_netlify_token=bar
+export TF_VAR_cloudflare_token=bar
 export TF_TOKEN_app_terraform_io=fuzz

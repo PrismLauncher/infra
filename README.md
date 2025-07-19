@@ -3,11 +3,11 @@
 1. Make sure new member has created accounts
    - on [HCP Terraform](https://app.terraform.io)
    - on [Hetzner Cloud](https://console.hetzner.cloud)
-   - on [Netlify](https://app.netlify.com)
+   - on [Cloudflare](https://dash.cloudflare.com)
 1. Invite new member
    - to [our HCP Terraform organization](https://app.terraform.io/app/prismlauncher/settings/users/) into the `admins` team
    - to [our Hetzner Cloud project](https://console.hetzner.cloud/projects/3927126/security/members) as `Admin`
-   - to [our Netlify team](https://app.netlify.com/teams/prismlauncher/members/new/access) as `Developer`
+   - to our Cloudflare account (NOTE: Currently the domain resides in @Scrumplex' account)
 
 # Setting up secrets
 
@@ -31,11 +31,12 @@ Environment variable: `TF_VAR_hcloud_token`
 1. Set permissions to `Read & Write`
 1. Click `Generate API token`
 
-## Netlify
+## Cloudflare
 
-Environment variable: `TF_VAR_netlify_token`
+Environment variable: `TF_VAR_cloudflare_token`
 
-1. Visit https://app.netlify.com/user/applications/personal
-1. Enter a descriptive description
-1. Set Expiration to `90 days`
-1. Click `Generate API token`
+1. Visit https://dash.cloudflare.com/profile/api-tokens
+1. Click `Create Token`
+1. Click `Use Template` next to `Edit zone DNS`
+1. Under `Zone Resources` Select the zone `prismlauncher.org`
+1. Click `Continue to summary`
