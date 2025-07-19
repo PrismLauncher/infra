@@ -4,9 +4,9 @@ terraform {
       source  = "hetznercloud/hcloud"
       version = "~> 1.45"
     }
-    netlify = {
-      source  = "netlify/netlify"
-      version = "~> 0.2"
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "4.52.0"
     }
   }
 
@@ -28,11 +28,18 @@ provider "hcloud" {
   token = var.hcloud_token
 }
 
-variable "netlify_token" {
-  type = string
+variable "cloudflare_token" {
+  sensitive = true
 }
 
-provider "netlify" {
-  token             = var.netlify_token
-  default_team_slug = "prismlauncher"
+provider "cloudflare" {
+  api_token = var.cloudflare_token
+}
+
+variable "zone_id" {
+  default = "9f629aeccf940f7a195e15f82af8845c"
+}
+
+variable "domain" {
+  default = "prismlauncher.org"
 }
