@@ -26,7 +26,7 @@ resource "hcloud_server" "andesite" {
   }
 }
 
-resource "cloudflare_record" "andesite4" {
+resource "cloudflare_dns_record" "andesite4" {
   zone_id = var.zone_id
   name    = "andesite.prismlauncher.org"
   content = hcloud_server.andesite.ipv4_address
@@ -34,7 +34,7 @@ resource "cloudflare_record" "andesite4" {
   ttl     = 1
 }
 
-resource "cloudflare_record" "andesite6" {
+resource "cloudflare_dns_record" "andesite6" {
   zone_id = var.zone_id
   name    = "andesite.prismlauncher.org"
   content = hcloud_server.andesite.ipv6_address
