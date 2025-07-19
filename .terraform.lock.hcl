@@ -37,7 +37,7 @@ provider "registry.opentofu.org/hashicorp/local" {
 
 provider "registry.opentofu.org/hetznercloud/hcloud" {
   version     = "1.51.0"
-  constraints = "~> 1.45"
+  constraints = "1.51.0"
   hashes = [
     "h1:yER+O3OKYfxBAO7KVYZzH+4EYrmorCO0J0hlnRUfH00=",
     "zh:0e8e78084c12866e8e3873011bcac125780b62afeaa518d4749b9a063ae6e32b",
