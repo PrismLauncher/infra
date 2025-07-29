@@ -42,6 +42,14 @@ resource "cloudflare_dns_record" "andesite6" {
   ttl     = 1
 }
 
+resource "cloudflare_dns_record" "prometheus_andesite" {
+  zone_id = var.zone_id
+  name    = "prometheus.andesite.prismlauncher.org"
+  content = "andesite.prismlauncher.org"
+  type    = "CNAME"
+  ttl     = 1
+}
+
 resource "local_file" "andesite-facts" {
   content = jsonencode({
     "hostname"     = hcloud_server.andesite.name

@@ -15,6 +15,7 @@
     inputs.agenix.nixosModules.age
 
     ./blockgame-meta.nix
+    ./caddy.nix
     ./comin.nix
     ./disks.nix
     ./letterbox.nix
