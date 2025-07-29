@@ -1,4 +1,7 @@
 { config, ... }:
+let
+  fqdn = "prometheus.andesite.prismlauncher.org";
+in
 {
   imports = [
     ./exporters/node.nix
@@ -14,6 +17,7 @@
     ];
 
     globalConfig.scrape_interval = "15s";
+    webExternalUrl = "https://${fqdn}/";
 
     alertmanagers = [
       {
@@ -54,6 +58,10 @@
   networking.firewall.allowedTCPPorts = [
     config.services.prometheus.port
   ];
+
+  services.caddy.virtualHosts.${fqdn}.extraConfig = ''
+    reverse_proxy localhost:${toString config.services.prometheus.port}
+  '';
 
   environment.persistence."/nix/persistence".directories = [
     "/var/lib/prometheus2"
