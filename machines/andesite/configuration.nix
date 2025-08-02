@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 {
   imports = [
     inputs.self.nixosModules.from-facts
@@ -24,6 +29,7 @@
 
   # this gets enabled by srvos
   services.cloud-init.enable = false;
+  boot.growPartition = lib.mkForce false;
 
   services.openssh.enable = true;
 
