@@ -89,7 +89,7 @@ resource "cloudflare_dns_record" "tuta_verifications" {
 resource "cloudflare_dns_record" "github_pages_verification" {
   type    = "TXT"
   zone_id = var.zone_id
-  name    = "_github-pages-challenge-PrismLauncher"
+  name    = "_github-pages-challenge-prismlauncher.prismlauncher.org"
   content = "\"23da4bf9f190fdedacf4b54db77a12\""
   ttl     = 1
 }
