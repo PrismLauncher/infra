@@ -17,15 +17,20 @@ jobs:
         with:
           persist-credentials: false
       - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v19
-      - name: Update flake.lock
-        id: update
-        uses: DeterminateSystems/update-flake-lock@v27
+        uses: cachix/install-nix-action@v31
         with:
-          pr-title: 'nix: update flake.lock'
+          nix_path: nixpkgs=channel:nixos-unstable
+      - name: Run update
+        run: |
+          nix flake update --commit-lock-file
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          title: 'nix: update flake.lock'
           token: ${{ secrets.AUTOMATA_TOKEN }}
       - name: Enable Pull Request Automerge
         uses: peter-evans/enable-pull-request-automerge@v3
         with:
-          pull-request-number: ${{ steps.update.outputs.pull-request-number }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
           merge-method: rebase
