@@ -38,6 +38,8 @@
     ../../keys/users/scrumplex.pub
   ];
 
+  nix.gc.automatic = true;
+
   environment.systemPackages = [
     pkgs.kitty.terminfo
   ];
