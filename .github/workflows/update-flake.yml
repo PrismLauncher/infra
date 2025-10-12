@@ -22,6 +22,8 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
       - name: Run update
         run: |
+          git config user.name '${{ github.actor }}'
+          git config user.email '${{ github.actor }}@users.noreply.github.com'
           nix flake update --commit-lock-file
       - name: Create Pull Request
         id: cpr
