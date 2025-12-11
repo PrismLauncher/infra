@@ -40,6 +40,10 @@ variable "zone_id" {
   default = "9f629aeccf940f7a195e15f82af8845c"
 }
 
+variable "account_id" {
+  default = "0b169a8eb4194bab65e0b6d900d02abb"
+}
+
 variable "domain" {
   default = "prismlauncher.org"
 }
