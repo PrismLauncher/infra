@@ -1,6 +1,15 @@
 {
   description = "Infrastructure configuration for Prism Launcher";
 
+  nixConfig = {
+    extra-substituters = [
+      "https://infra-cache.prismlauncher.org"
+    ];
+    extra-trusted-public-keys = [
+      "infra-cache.prismlauncher.org-1:4U7OYwBrZnq4KfTVXRPArA+YwWbPlT83ZGVbP7HXkKk="
+    ];
+  };
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
