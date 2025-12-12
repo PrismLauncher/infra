@@ -38,6 +38,14 @@
     ../../keys/users/scrumplex.pub
   ];
 
+  nix.settings.substituters = [
+    "https://cache.nixos.org"
+    "https://infra-cache.prismlauncher.org"
+  ];
+  nix.settings.trusted-public-keys = [
+    "infra-cache.prismlauncher.org-1:4U7OYwBrZnq4KfTVXRPArA+YwWbPlT83ZGVbP7HXkKk="
+  ];
+
   nix.gc.automatic = true;
 
   environment.systemPackages = [
