@@ -11,50 +11,29 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
-    treefmt-nix = {
-      url = "github:numtide/treefmt-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    agenix = {
-      url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.systems.follows = "flake-utils/systems";
-    };
-    srvos = {
-      url = "github:nix-community/srvos";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    agenix.inputs.nixpkgs.follows = "nixpkgs";
+    agenix.url = "github:ryantm/agenix";
+    blockgame-meta.inputs.flake-parts.follows = "flake-parts";
+    blockgame-meta.inputs.nixpkgs.follows = "nixpkgs";
+    blockgame-meta.url = "github:PrismLauncher/meta";
+    comin.inputs.nixpkgs.follows = "nixpkgs";
+    comin.url = "github:nlewo/comin";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
+    disko.url = "github:nix-community/disko";
+    flake-parts.url = "github:hercules-ci/flake-parts";
     impermanence.url = "github:nix-community/impermanence";
+    import-tree.url = "github:vic/import-tree";
+    letterbox.inputs.nixpkgs.follows = "nixpkgs";
+    letterbox.url = "github:TheKodeToad/Letterbox";
     nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
-    comin = {
-      url = "github:nlewo/comin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    blockgame-meta = {
-      url = "github:PrismLauncher/meta";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    refraction = {
-      url = "github:PrismLauncher/refraction";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    letterbox = {
-      url = "github:TheKodeToad/Letterbox";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    refraction.inputs.nixpkgs.follows = "nixpkgs";
+    refraction.url = "github:PrismLauncher/refraction";
+    srvos.inputs.nixpkgs.follows = "nixpkgs";
+    srvos.url = "github:nix-community/srvos";
+    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
-  outputs =
-    { flake-utils, ... }@inputs:
-    flake-utils.lib.meld inputs [
-      ./machines/andesite
-      ./modules
-      ./development.nix
-    ];
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./nix);
 }

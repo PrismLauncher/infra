@@ -57,5 +57,5 @@ resource "local_file" "andesite-facts" {
     "ipv4_address" = hcloud_server.andesite.ipv4_address
     "ipv6_address" = hcloud_server.andesite.ipv6_address
   })
-  filename = "${path.root}/machines/andesite/facts.json"
+  filename = "${path.root}/nix/modules/system-andesite/networking.json"
 }
