@@ -3,6 +3,9 @@
 .envrc.local
 .direnv/
 
+result*
+repl-result*
+
 # Local .terraform directories
 **/.terraform/*
 
