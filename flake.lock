@@ -274,11 +274,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1767518966,
-        "narHash": "sha256-qT2YXlluXT+iQNidOGcCNk/I/qvwJq46hLdkOdnt7K8=",
+        "lastModified": 1768657148,
+        "narHash": "sha256-p2+1jJdXq+dp0sY0/kl/+DYAecRfXHWvZaPcG8a3G7M=",
         "owner": "TheKodeToad",
         "repo": "Letterbox",
-        "rev": "3214b779097538ceeb99ce464dd34028ceab694e",
+        "rev": "b8653890ff1a6fd9b00aca83f1e705dc24e437ba",
         "type": "github"
       },
       "original": {
