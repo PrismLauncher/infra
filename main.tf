@@ -12,8 +12,9 @@ resource "hcloud_ssh_key" "user_keys" {
 resource "hcloud_server" "andesite" {
   name        = "andesite"
   image       = "ubuntu-22.04"
-  server_type = "cax11"
-  datacenter  = "fsn1-dc14"
+  server_type = "cax21"
+  location    = "fsn1"
+  keep_disk   = false
   public_net {
     ipv4_enabled = true
     ipv6_enabled = true
