@@ -4,13 +4,6 @@ locals {
     "i18n",
     "meta"
   ]
-  netlify_projects = [
-    "@",
-    "www",
-    "dev.wiki",
-    "next",
-    "community"
-  ]
   tuta_records = {
     txt-verify = {
       type    = "TXT"
@@ -48,18 +41,6 @@ locals {
       content = "\"v=DMARC1; p=quarantine; adkim=s\""
     }
   }
-}
-
-# Netlify
-
-resource "cloudflare_dns_record" "netlify_cnames" {
-  for_each = toset(local.netlify_projects)
-  zone_id  = var.zone_id
-  name     = each.value
-  content  = "apex-loadbalancer.netlify.com"
-  type     = "CNAME"
-  proxied  = true
-  ttl      = 1
 }
 
 # Tuta
