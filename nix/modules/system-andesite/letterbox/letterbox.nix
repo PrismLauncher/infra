@@ -25,5 +25,7 @@
           };
         };
       };
+
+      systemd.services."letterbox".environment.DISCORD_ENABLE_PRIVILEGED_INTENTS = "guild_members";
     };
 }
