@@ -4,19 +4,19 @@ let
   andesite = builtins.readFile ./keys/andesite.pub;
 in
 {
-  "machines/andesite/blockgame-meta.key.age".publicKeys = [
+  "nix/modules/system-andesite/blockgame-meta/prismautomata.key.age".publicKeys = [
     scrumplex
     andesite
   ];
-  "machines/andesite/letterbox.env.age".publicKeys = [
+  "nix/modules/system-andesite/letterbox/letterbox.env.age".publicKeys = [
     scrumplex
     andesite
   ];
-  "machines/andesite/prometheus/alertmanager.env.age".publicKeys = [
+  "nix/modules/system-andesite/prometheus/alertmanager.env.age".publicKeys = [
     scrumplex
     andesite
   ];
-  "machines/andesite/refraction.env.age".publicKeys = [
+  "nix/modules/system-andesite/refraction/refraction.env.age".publicKeys = [
     scrumplex
     andesite
   ];
