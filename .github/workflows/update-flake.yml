@@ -4,6 +4,11 @@ on:
     # run every saturday
     - cron: '0 0 * * 6'
   workflow_dispatch:
+    inputs:
+      flake-inputs:
+        description: Specific flake inputs to update (leave empty for all)
+        required: false
+        type: string
 jobs:
   update:
     name: Run update
@@ -21,10 +26,12 @@ jobs:
         with:
           nix_path: nixpkgs=channel:nixos-unstable
       - name: Run update
+        env:
+          FLAKE_INPUTS: ${{ inputs.flake-inputs || '' }}
         run: |
           git config user.name '${{ github.actor }}'
           git config user.email '${{ github.actor }}@users.noreply.github.com'
-          nix flake update --commit-lock-file
+          nix flake update --commit-lock-file "$FLAKE_INPUTS"
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v8
