@@ -31,7 +31,12 @@ jobs:
         run: |
           git config user.name '${{ github.actor }}'
           git config user.email '${{ github.actor }}@users.noreply.github.com'
-          nix flake update --commit-lock-file "$FLAKE_INPUTS"
+
+          if [ -z "${FLAKE_INPUTS:-}" ]; then
+            nix flake update --commit-lock-file
+          else
+            nix flake update --commit-lock-file "$FLAKE_INPUTS"
+          fi
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v8
